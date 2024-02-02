@@ -31,11 +31,17 @@ To run training, evaluation, or inference for our finetuned models, you need to 
 
 ```bash
 pip install -r requirements.txt
+
+for accelerate:
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 If you just want the dependencies for the weight diff script, use:
 ```bash
 pip install -r weight-diff-requirements.txt
+
+for accelerate:
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 ## Training
