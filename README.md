@@ -72,9 +72,15 @@ pip install -e .[all]
 cd ..
 
 pip install flash-attn --no-build-isolation
+pip install flash-attn==1.0.9 --no-build-isolation
 
 ./scripts/finetune_with_accelerate.sh
 ```
+_FlashAttention-2 currently supports:
+https://github.com/Dao-AILab/flash-attention
+Ampere, Ada, or Hopper GPUs (e.g., A100, RTX 3090, RTX 4090, H100). Support for Turing GPUs (T4, RTX 2080) is coming soon, please use FlashAttention 1.x for Turing GPUs for now.
+Datatype fp16 and bf16 (bf16 requires Ampere, Ada, or Hopper GPUs).
+All head dimensions up to 256. Head dim > 192 backward requires A100/A800 or H100/H800._
 
 Make sure to adjust `model_name_or_path`, `tokenizer_name`, `train_file`, and `output_dir` to your models / data / setting. By default, this uses `deepspeed` with `accelerate`.
 
