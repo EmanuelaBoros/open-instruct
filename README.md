@@ -65,6 +65,14 @@ Generally, most huggingface-compatible causal language models should work fine w
 You can use the following command to run instruction tuning (finetuning a pretrained model to follow instructions):
 
 ```bash
+
+git clone https://github.com/allenai/OLMo.git
+cd OLMo
+pip install -e .[all]
+cd ..
+
+pip install flash-attn --no-build-isolation
+
 ./scripts/finetune_with_accelerate.sh
 ```
 
